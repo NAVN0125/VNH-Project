@@ -1,41 +1,46 @@
-var index = 0;
-var index2 = 1;
-var second = 0;
-var pageHeight = window.innerHeight;
+let index = 0;
+let index2 = 0;
+let second = 0;
+let pageHeight = window.innerHeight;
 document.body.style.transform = "translate3d(0px,0px,0px)";
 
 
 function navigatePage(x) {
     index2 = x
+    console.log(index2)
     activateContent()
+}
+
+function helloWorld() {
+    alert("Hello World!")
 }
 
 // ---------------------------------------------------------------------
 
-var pg_1 = document.getElementById("pg-1");
-var pg_2 = document.getElementById("pg-2");
-var pg_3 = document.getElementById("pg-3");
-var pg_4 = document.getElementById("pg-4");
+let pg_1 = document.getElementById("pg-1");
+let pg_2 = document.getElementById("pg-2");
+let pg_3 = document.getElementById("pg-3");
+let pg_4 = document.getElementById("pg-4");
 
 pg_1.style.backgroundColor = "rgb(125, 125, 125)"
 
 function identifyPage() {
-    if (index2 == 1) {
+    if (index2 == 0) {
         pg_1.style.backgroundColor = "rgb(125, 125, 125)"
         pg_2.style.backgroundColor = "rgb(161, 161, 161)"
         pg_3.style.backgroundColor = "rgb(161, 161, 161)"
         pg_4.style.backgroundColor = "rgb(161, 161, 161)"
-    } else if (index2 == 2) {
+    } else if (index2 == 1) {
         pg_1.style.backgroundColor = "rgb(161, 161, 161)"
         pg_2.style.backgroundColor = "rgb(125, 125, 125)"
         pg_3.style.backgroundColor = "rgb(161, 161, 161)"
         pg_4.style.backgroundColor = "rgb(161, 161, 161)"
-    } else if (index2 == 3) {
+    } else if (index2 == 2) {
         pg_1.style.backgroundColor = "rgb(161, 161, 161)"
         pg_2.style.backgroundColor = "rgb(161, 161, 161)"
         pg_3.style.backgroundColor = "rgb(125, 125, 125)"
         pg_4.style.backgroundColor = "rgb(161, 161, 161)"
-    } else if (index2 == 0) {
+    } else if (index2 == 3) {
         pg_1.style.backgroundColor = "rgb(161, 161, 161)"
         pg_2.style.backgroundColor = "rgb(161, 161, 161)"
         pg_3.style.backgroundColor = "rgb(161, 161, 161)"
@@ -49,43 +54,43 @@ function identifyPage() {
 
 
 function loopContents() {
-    var blank3 = document.getElementById("blank3");
+    let blank3 = document.getElementById("blank3");
     while (blank3.firstChild) {
         blank3.removeChild(blank3.firstChild);
     }
     blank3.style.flexDirection = 'row'
 
     if (index2 == 1) {
-        var div = document.createElement("div")
+        let div = document.createElement("div")
         div.style.display = "flex";
-        var part1 = document.createElement("div");
+        let part1 = document.createElement("div");
         part1.style.marginRight = "3vw"
         part1.classList.add("col-5");
 
-        var heading = document.createElement('h1')
+        let heading = document.createElement('h1')
         heading.innerHTML = 'Phân tích về bản sắc dân tộc'
         heading.style.fontWeight = 'bold'
         heading.style.fontSize = '3vw'
         heading.style.fontFamily = "'Courier New', Courier, monospace"
         heading.style.marginTop = '3.5vh'
 
-        var heading1 = document.createElement("h6");
-        var text11 = document.createElement("p");
-        var text12 = document.createElement("p");
+        let heading1 = document.createElement("h6");
+        let text11 = document.createElement("p");
+        let text12 = document.createElement("p");
         heading1.innerHTML = "I. Sự tích về Dã tràng xây cát";
-        heading1.style.marginTop = "15vh"
+        heading1.style.marginTop = "3vh"
         text11.innerHTML = "Dã Tràng vốn là một chàng trai tốt bụng, nhờ ra tay giúp một con rắn đực mà được tặng một viên ngọc quý. Về sau cũng vì viên ngọc đó cùng sự tốt bụng của mình, Dã Tràng lại bị dân làng phản bội, đàn quạ hàm oan rắp tâm hãm hại. Nhưng rồi lại nhờ viên ngọc cậu ta đã thoát tội diệt thân. Về sau, Dã Tràng vì cứu mạng một đôi ngỗng mà được tặng thêm một viên ngọc quý."
         text12.innerHTML = "Nhờ có viên ngọc có thể khuấy đảo Long cung mà anh được Long Vương ban cho vàng bạc châu báu với điều kiện không bao giờ mang viên ngọc đó đi náo loạn các vùng nước. Tưởng chừng như có hết mọi thứ trong tay, cuối cùng, vì hai viên ngọc quý mà người vợ bỏ đi theo lời dụ dỗ của Long Vương. Bởi tiếc ngọc quý, tức giận vợ mình và Long Vương, Dã Tràng quyết tâm đem cát lấp biển để đắp thành đường đi đòi lại ngọc. Kết cuộc, cậu ta chết đi, hóa thành con dã tràng, ngày ngày lăn cát đi lấp biển, nhưng rồi sóng biển lại xô cho tan biến."
         part1.appendChild(heading1);
         part1.appendChild(text11);
         part1.appendChild(text12);
 
-        var part2 = document.createElement("div");
+        let part2 = document.createElement("div");
         part2.classList.add("col-6");
-        var heading21 = document.createElement("h6");
-        heading21.style.marginTop = "15vh"
-        var text21 = document.createElement("p");
-        var text22 = document.createElement("p");
+        let heading21 = document.createElement("h6");
+        heading21.style.marginTop = "3vh"
+        let text21 = document.createElement("p");
+        let text22 = document.createElement("p");
         heading21.innerHTML = "II. Ý nghĩa bài trường ca:"
         text21.innerHTML = "Nhiều tài liệu nói rằng cảm hứng cho nhạc sĩ Trịnh Công Sơn viết Dã tràng ca đã hình thành ngay từ lúc nhỏ khi ông còn Huế. Ngày đó, Trịnh Công Sơn thường xuyên theo mẹ đi chùa Phổ Quang tìm hiểu Phật học. Một thời gian sau, để lập thân, và cũng để tránh quân dịch, Trịnh Công Sơn vào học trường Sư phạm Quy Nhơn. Mảnh đất ven biển tuyệt đẹp này cũng là nơi đã tạo cảm hứng để những bản tình ca hay nhất của Trịnh Công Sơn ra đời như Diễm xưa, Biển nhớ…và đặc biệt là bản trường ca đầu tiên: Tiếng hát dã tràng…"
         text22.innerHTML = "Vào lúc đó, trường Sư phạm Quy Nhơn yêu cầu Trịnh Công Sơn soạn một bài hát để trình bày trong Đại nhạc hội. Và bản Dã tràng ca ra đời, tên ban đầu là Tiếng hát dã tràng. Đó là một bài hát thơ dài gồm 2 phần với 13 đoản khúc có tựa đề riêng, xoay quanh thân phận con người. Kiếp người là vô nghĩa, con người sinh ra đã đối mặt khổ đau, chỉ có tình yêu mới cứu rỗi con người. Dã tràng ca đã chất chứa những tinh thần cơ bản nhất của âm nhạc Trịnh Công Sơn, mở đường cho dòng ca khúc thân phận đã làm nên tên tuổi Trịnh Công Sơn."
@@ -95,35 +100,32 @@ function loopContents() {
 
         div.appendChild(part1);
         div.appendChild(part2);
-        div.style.marginTop = "-120px";
+        div.style.marginTop = "-4vh";
         blank3.appendChild(heading);
         blank3.appendChild(div);
-        blank3.style.display = "flex";
         blank3.style.flexDirection = 'column'
 
-
     } else if (index2 == 2) {
-        var part_container = document.createElement("div");
+        let part_container = document.createElement("div");
         part_container.style.display = "flex";
-        part_container.sty
 
-        var heading = document.createElement("h1");
+        let heading = document.createElement("h1");
         heading.innerHTML = "Phân tích kết cấu chính"
         heading.style.fontWeight = 'bold'
         heading.style.fontSize = '3vw'
         heading.style.fontFamily = "'Courier New', Courier, monospace"
         heading.style.marginTop = '3vh'
 
-        var part1 = document.createElement("div");
+        let part1 = document.createElement("div");
         part1.style.marginRight = "2vw"
         part1.classList.add("col-5");
-        var heading1 = document.createElement("h6");
-        var text11 = document.createElement("p");
-        var text12 = document.createElement("p");
-        var text13 = document.createElement("p");
-        var text14 = document.createElement("p");
-        var text15 = document.createElement("p");
-        var text16 = document.createElement("p");
+        let heading1 = document.createElement("h6");
+        let text11 = document.createElement("p");
+        let text12 = document.createElement("p");
+        let text13 = document.createElement("p");
+        let text14 = document.createElement("p");
+        let text15 = document.createElement("p");
+        let text16 = document.createElement("p");
         heading1.innerHTML = "Chương 1:";
         text11.innerHTML = "+ Khổ đầu: mở đầu"
         text12.innerHTML = "+ Khổ 2: nói qua về sự tích dã tràng; nói về hành trình và công sức của dã tràng"
@@ -131,7 +133,7 @@ function loopContents() {
         text14.innerHTML = "+ “Mình tôi đi, làn sóng đến, nghe công vỡ cho thân ru mềm”"
         text15.innerHTML = "+ “Nàу dã tràng ơi nghe thân lưu đàу, ngàn năm còn mãi, ngàn sau còn mãi cho vai thêm gầу khi nắng khi mưa”,"
         text16.innerHTML = "+ “Trùng dương ơi đã mấу ngàn năm, gọi miên man cho sóng triều lên, quên dã tràng đêm ngàу xe cát .Trùng dương ơi sao nỡ bỏ quên, gọi cơn đau khi sóng triều lên, công dã tràng muôn đời vỡ tan”"
-        // var img = document.createElement("img");
+        // let img = document.createElement("img");
         // img.src = "img2.jpg"
         // img.style.width = "100%"
         // img.style.height = "auto"
@@ -145,15 +147,15 @@ function loopContents() {
         part1.appendChild(text16);
         // part1.appendChild(img);
 
-        var part2 = document.createElement("div");
+        let part2 = document.createElement("div");
         part2.classList.add("col-5");
-        var heading2 = document.createElement("h6");
-        var text21 = document.createElement("p");
-        var text22 = document.createElement("p");
-        var text23 = document.createElement("p");
-        var text24 = document.createElement("p");
-        var text25 = document.createElement("p");
-        var text26 = document.createElement("p");
+        let heading2 = document.createElement("h6");
+        let text21 = document.createElement("p");
+        let text22 = document.createElement("p");
+        let text23 = document.createElement("p");
+        let text24 = document.createElement("p");
+        let text25 = document.createElement("p");
+        let text26 = document.createElement("p");
 
         heading2.innerHTML = "Chương 2:";
         text21.innerHTML = "+ Khổ 1 2 3: nói về các khó khăn, thử thách của tác giả cung như công lao mà ông đã dùng để vượt qua nó; cảm thông với số phận của dã tràng và liên hệ đến bản thân"
@@ -163,7 +165,7 @@ function loopContents() {
         text25.innerHTML = "+ Khổ cuối: tình yêu như một liều thuốc cứu chữa tác giả trong những tháng ngày khó khăn"
         text26.innerHTML = "+ “Gọi vào niềm không buốt đau, gọi vào ngàу sau nhớ nhau”: Thể hiện sự tuyệt vọng của tác giả"
         
-        // var img2 = document.createElement("img");
+        // let img2 = document.createElement("img");
         // img2.src = "R.jpg"
         // img2.style.width = "100%"
         // img2.style.height = "auto"
@@ -185,21 +187,21 @@ function loopContents() {
 
 
     } else if (index2 == 3) {
-        var heading = document.createElement("h1");
+        let heading = document.createElement("h1");
         heading.innerHTML = "Cảm nhận của chuyên gia"
         heading.style.fontWeight = 'bold'
         heading.style.fontSize = '3vw'
         heading.style.fontFamily = "'Courier New', Courier, monospace"
         heading.style.marginTop = '3.5vh'
 
-        var text1 = document.createElement("p")
-        var text2 = document.createElement("p")
-        var text3 = document.createElement("p")
-        var text4 = document.createElement("p")
-        var br1 = document.createElement("br")
-        var br2 = document.createElement("br")
-        var br3 = document.createElement("br")
-        var br4 = document.createElement("br")
+        let text1 = document.createElement("p")
+        let text2 = document.createElement("p")
+        let text3 = document.createElement("p")
+        let text4 = document.createElement("p")
+        let br1 = document.createElement("br")
+        let br2 = document.createElement("br")
+        let br3 = document.createElement("br")
+        let br4 = document.createElement("br")
 
         text1.style.fontStyle = "italic"
         text2.style.fontStyle = "italic"
@@ -228,22 +230,22 @@ function loopContents() {
         blank3.style.flexDirection = 'column'
 
     } else if (index2 == 0) {
-        var heading = document.createElement('h1')
+        let heading = document.createElement('h1')
         heading.innerHTML = 'Tiểu Sử'
         heading.style.fontWeight = 'bold'
         heading.style.fontSize = '4vw'
         heading.style.fontFamily = "'Courier New', Courier, monospace"
         heading.style.marginTop = '2vh'
 
-        var s1h = document.createElement('h6')
-        var s2h = document.createElement('h6')
-        var s3h = document.createElement('h6')
-        var s4h = document.createElement('h6')
+        let s1h = document.createElement('h6')
+        let s2h = document.createElement('h6')
+        let s3h = document.createElement('h6')
+        let s4h = document.createElement('h6')
 
-        var p1 = document.createElement('p')
-        var p2 = document.createElement('p')
-        var p3 = document.createElement('p')
-        var p4 = document.createElement('p')
+        let p1 = document.createElement('p')
+        let p2 = document.createElement('p')
+        let p3 = document.createElement('p')
+        let p4 = document.createElement('p')
 
         s1h.innerHTML = 'I: Sơ lược về Trịnh Công Sơn'
         s2h.innerHTML = 'II: Sự Nghiệp và Tác Phẩm Nổi Tiếng'
@@ -266,24 +268,17 @@ function loopContents() {
         blank3.appendChild(p4);
 
         blank3.style.flexDirection = 'column'
-
-    }
-    index2++;
-    if (index2 == 4) {
-        index2 = 0;
     }
 }
 
 function activateContent() {
     second = 0;
+    console.log(index2)
     document.getElementById("blank3").style.animation = "changeContent 2s"
     setTimeout(function () {
         loopContents();
         identifyPage();
     }, 800)
-    setTimeout(function () {
-        document.getElementById("blank3").style.animation = "none"
-    }, 2000)
 }
 
 
@@ -292,8 +287,9 @@ function activateContent() {
 
 setInterval(function () {
     second++
-    if (second == 45) {
+    if (second == 10) {
         activateContent();
+        index2++
     }
 }, 1000)
 
