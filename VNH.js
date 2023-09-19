@@ -4,6 +4,21 @@ var pageHeight = window.innerHeight;
 document.body.style.transform = "translate3d(0px,0px,0px)";
 
 
+function navigatePage(x) {
+    if (x == 1) {
+        index2 = 0;
+    } else if (x == 2) {
+        index2 = 1;
+    } else if (x == 3) {
+        index2 = 2;
+    } else if (x == 0) {
+        index2 = 3;
+    }
+    activateChange()
+}
+
+// ---------------------------------------------------------------------
+
 var pg_1 = document.getElementById("pg-1");
 var pg_2 = document.getElementById("pg-2");
 var pg_3 = document.getElementById("pg-3");
@@ -14,16 +29,24 @@ pg_1.style.backgroundColor = "rgb(125, 125, 125)"
 function identifyPage() {
     if (index2 == 1) {
         pg_1.style.backgroundColor = "rgb(125, 125, 125)"
+        pg_2.style.backgroundColor = "rgb(161, 161, 161)"
+        pg_3.style.backgroundColor = "rgb(161, 161, 161)"
         pg_4.style.backgroundColor = "rgb(161, 161, 161)"
     } else if (index2 == 2) {
         pg_2.style.backgroundColor = "rgb(125, 125, 125)"
         pg_1.style.backgroundColor = "rgb(161, 161, 161)"
+        pg_3.style.backgroundColor = "rgb(161, 161, 161)"
+        pg_4.style.backgroundColor = "rgb(161, 161, 161)"
     } else if (index2 == 3) {
         pg_3.style.backgroundColor = "rgb(125, 125, 125)"
+        pg_1.style.backgroundColor = "rgb(161, 161, 161)"
         pg_2.style.backgroundColor = "rgb(161, 161, 161)"
+        pg_4.style.backgroundColor = "rgb(161, 161, 161)"
     } else if (index2 == 0) {
         pg_4.style.backgroundColor = "rgb(125, 125, 125)"
         pg_3.style.backgroundColor = "rgb(161, 161, 161)"
+        pg_1.style.backgroundColor = "rgb(161, 161, 161)"
+        pg_2.style.backgroundColor = "rgb(161, 161, 161)"
     }
 }
 
@@ -33,7 +56,6 @@ function identifyPage() {
 
 
 function loopContents() {
-    console.log(index2)
     var blank3 = document.getElementById("blank3");
     while (blank3.firstChild) {
         blank3.removeChild(blank3.firstChild);
@@ -259,7 +281,8 @@ function loopContents() {
     }
 }
 
-setInterval(function () {
+function activateChange() {
+    console.log(index2)
     document.getElementById("blank3").style.animation = "changeContent 2s"
     setTimeout(function () {
         loopContents();
@@ -268,8 +291,7 @@ setInterval(function () {
     setTimeout(function () {
         document.getElementById("blank3").style.animation = "none"
     }, 2000)
-}, 7000)
-
+}
 
 
 // -------------------------------------------------------------------
