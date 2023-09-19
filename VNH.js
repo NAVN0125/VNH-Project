@@ -1,20 +1,13 @@
 var index = 0;
 var index2 = 1;
+var second = 0;
 var pageHeight = window.innerHeight;
 document.body.style.transform = "translate3d(0px,0px,0px)";
 
 
 function navigatePage(x) {
-    if (x == 1) {
-        index2 = 0;
-    } else if (x == 2) {
-        index2 = 1;
-    } else if (x == 3) {
-        index2 = 2;
-    } else if (x == 0) {
-        index2 = 3;
-    }
-    activateChange()
+    index2 = x
+    activateContent()
 }
 
 // ---------------------------------------------------------------------
@@ -33,20 +26,20 @@ function identifyPage() {
         pg_3.style.backgroundColor = "rgb(161, 161, 161)"
         pg_4.style.backgroundColor = "rgb(161, 161, 161)"
     } else if (index2 == 2) {
-        pg_2.style.backgroundColor = "rgb(125, 125, 125)"
         pg_1.style.backgroundColor = "rgb(161, 161, 161)"
+        pg_2.style.backgroundColor = "rgb(125, 125, 125)"
         pg_3.style.backgroundColor = "rgb(161, 161, 161)"
         pg_4.style.backgroundColor = "rgb(161, 161, 161)"
     } else if (index2 == 3) {
-        pg_3.style.backgroundColor = "rgb(125, 125, 125)"
         pg_1.style.backgroundColor = "rgb(161, 161, 161)"
         pg_2.style.backgroundColor = "rgb(161, 161, 161)"
+        pg_3.style.backgroundColor = "rgb(125, 125, 125)"
         pg_4.style.backgroundColor = "rgb(161, 161, 161)"
     } else if (index2 == 0) {
-        pg_4.style.backgroundColor = "rgb(125, 125, 125)"
-        pg_3.style.backgroundColor = "rgb(161, 161, 161)"
         pg_1.style.backgroundColor = "rgb(161, 161, 161)"
         pg_2.style.backgroundColor = "rgb(161, 161, 161)"
+        pg_3.style.backgroundColor = "rgb(161, 161, 161)"
+        pg_4.style.backgroundColor = "rgb(125, 125, 125)"
     }
 }
 
@@ -281,8 +274,8 @@ function loopContents() {
     }
 }
 
-function activateChange() {
-    console.log(index2)
+function activateContent() {
+    second = 0;
     document.getElementById("blank3").style.animation = "changeContent 2s"
     setTimeout(function () {
         loopContents();
@@ -297,7 +290,16 @@ function activateChange() {
 // -------------------------------------------------------------------
 
 
+setInterval(function () {
+    second++
+    if (second == 45) {
+        activateContent();
+    }
+}, 1000)
 
+
+
+// -------------------------------------------------------------------
 
 document.addEventListener("scroll", function (e) {
     document.body.scrollTop = 0;
