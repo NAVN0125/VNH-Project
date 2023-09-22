@@ -253,7 +253,7 @@ function loopContents() {
         s4h.innerHTML = 'IV: Kế Hậu và Tình Cảm Cộng Đồng'
 
         p1.innerHTML = 'Trịnh Công Sơn, nhạc sĩ tài hoa của Việt Nam, chào đời vào ngày 28 tháng 2 năm 1939 tại thôn Hà Tĩnh, tỉnh Hà Nội. Ông là một biểu tượng về âm nhạc dân ca và ballad tại Việt Nam. Với tài năng và tâm hồn nghệ sĩ, ông đã để lại dấu ấn sâu sắc trong lĩnh vực âm nhạc của đất nước.'
-        p2.innerHTML = 'Trịnh Công Sơn đã sáng tác nhiều bản nhạc nổi tiếng như "Hát Cho Người Đi Rồi," "Nắng Thủy Tinh," và "Diễm Xưa." Những ca khúc này thường mang thông điệp nhân văn và tâm hồn, thể hiện những cảm xúc sâu lắng về tình yêu, cuộc sống và xã hội. Tác phẩm của ông đã lan tỏa tới nhiều thế hệ người yêu nhạc và trở thành biểu tượng của nền nhạc Việt Nam.'
+        p2.innerHTML = 'Trịnh Công Sơn đã sáng tác nhiều bản nhạc nổi tiếng như "Biển nghìn thu ở lại," "Bên sông," và "Diễm Xưa." Những ca khúc này thường mang thông điệp nhân văn và tâm hồn, thể hiện những cảm xúc sâu lắng về tình yêu, cuộc sống và xã hội. Tác phẩm của ông đã lan tỏa tới nhiều thế hệ người yêu nhạc và trở thành biểu tượng của nền nhạc Việt Nam.'
         p3.innerHTML = 'Trịnh Công Sơn đã đoạt nhiều giải thưởng danh giá trong sự nghiệp âm nhạc của mình, bao gồm cả Giải thưởng Hoàng gia về Nhạc Việt Nam. Tác phẩm của ông không chỉ được yêu thích trong nước mà còn được biết đến và yêu mến trên toàn thế giới. Những bản nhạc của ông đã được dịch ra nhiều ngôn ngữ và thể hiện bởi nhiều nghệ sĩ quốc tế.'
         p4.innerHTML = 'Trịnh Công Sơn đã ra đi vào ngày 1 tháng 4 năm 2001, nhưng tác phẩm của ông vẫn sống mãi trong trái tim của người yêu nhạc. Cộng đồng người hâm mộ và các nghệ sĩ tiếp tục tôn vinh di sản âm nhạc của ông thông qua các sự kiện và biểu diễn. Ông là một huyền thoại âm nhạc Việt Nam và sự nghiệp của ông sẽ luôn được nhớ đến với tình yêu và tôn kính.'
 
@@ -269,16 +269,22 @@ function loopContents() {
 
         blank3.style.flexDirection = 'column'
     }
+
+    if (index2 == 4) {
+        index2 = 0
+    }
 }
 
 function activateContent() {
     second = 0;
-    console.log(index2)
     document.getElementById("blank3").style.animation = "changeContent 2s"
     setTimeout(function () {
         loopContents();
         identifyPage();
     }, 800)
+    setTimeout(function () {
+        document.getElementById("blank3").style.animation = "none"
+    }, 2000)
 }
 
 
@@ -287,7 +293,7 @@ function activateContent() {
 
 setInterval(function () {
     second++
-    if (second == 10) {
+    if (second == 45) {
         activateContent();
         index2++
     }
